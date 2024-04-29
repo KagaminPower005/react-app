@@ -73,7 +73,7 @@ function App() {
     getMsgs(p);
   }
   const onNext = (event)=> {
-    const p = pnum + 1 <= 1 ? 1 : pnum + 1;
+    const p = pnum + 1 <= plast ? pnum + 1 :plast ;
     getMsgs(p);
   }
   const onLast = (event)=> {
