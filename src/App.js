@@ -36,9 +36,9 @@ function App() {
     setContent(event.target.value);
   }
   const doAction = (event)=> {
-    const data = {
+      const data = {
       content:content,
-    }
+    }    
     fetch('/api/post', {
       method: 'post',
       headers: {},
@@ -46,7 +46,7 @@ function App() {
     }).then(resp=>resp.text())
       .then(res=>{
         getPlast();
-        getMsgs(1);
+        getMsgs(1); 
         if (res == 'OK') {
           setContent('');
           setMessage('メッセージを投稿しました！');
@@ -80,6 +80,12 @@ function App() {
     getMsgs(plast);
   }
 
+  const onReload = (event)=> {
+    const p = pnum;
+    window.location.reload();
+    getMsgs(p);
+  }
+
   useEffect(()=>{
     getUser();
     getMsgs(1);
@@ -93,8 +99,8 @@ function App() {
       {message != '' &&
       <div className="alert alert-primary alert-dismissible fade show" role="alert">
         <p>{ message }</p>
-        <button type="button" class="btn-close" 
-          data-bs-dismiss="alert"></button>
+        <button type="button" class="btn-close" onClick={ onReload }
+          data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       }
       <div className="content">
