@@ -54,6 +54,7 @@ function App() {
       });
   }
   const doGood = (event)=> {
+  //  if (event.obj.fields.id != user.id){    
     fetch('/api/good/' + event.target.id)
       .then(resp=> resp.text())
       .then(res=>{
@@ -64,6 +65,7 @@ function App() {
           setMessage('既にGoodしています。');
         }
       });
+//  }
   }
   const onFirst = (event)=> {
     getMsgs(1);
