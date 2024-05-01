@@ -84,7 +84,7 @@ function App() {
 
   const onReload = (event)=> {
     const p = pnum;
-    window.location.reload();
+    window.location.reload(false);
     getMsgs(p);
   }
 
