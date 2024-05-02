@@ -82,10 +82,8 @@ function App() {
     getMsgs(plast);
   }
 
-  const onReload = (event)=> {
-    const p = pnum;
-    window.location.reload(false);
-    getMsgs(p);
+  const clearMsg = (event)=> {
+    setMessage('');
   }
 
   useEffect(()=>{
@@ -101,7 +99,7 @@ function App() {
       {message != '' &&
       <div className="alert alert-primary alert-dismissible fade show" role="alert">
         <p>{ message }</p>
-        <button type="button" class="btn-close" onClick={ onReload }
+        <button type="button" class="btn-close" onClick={ clearMsg }
           data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       }
