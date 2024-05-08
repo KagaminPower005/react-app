@@ -38,7 +38,15 @@ function App() {
   const doAction = (event)=> {
       const data = {
       content:content,
-    }    
+    }
+    if(data.content.trim() == ""){
+      setMessage("投稿欄を入力してください");
+      return;
+    }
+    if(data.content.length > 140){
+      setMessage("投稿欄への入力は、140文字以内にしてください。");
+      return;
+    }
     fetch('/api/post', {
       method: 'post',
       headers: {},

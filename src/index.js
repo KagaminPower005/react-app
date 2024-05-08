@@ -10,14 +10,14 @@ root.render(
     <nav className="navbar fixed-top navbar-expand navbar-light bg-light">
     <ul style={{width:"100%"}} className="navbar-nav mr-auto">
       <li className="nav-item">
-        <a className="nav-link" href="/">top</a>
+        <a className="nav-link" href="/api/">top</a>
+      </li>
+      {/*<li className="nav-item">
+        <a className="nav-link" href="/api/post/">post</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/post">post</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/goods">good</a>
-      </li>
+        <a className="nav-link" href="/api/goods/">good</a>
+      </li>*/}
     </ul>
     </nav>
 
